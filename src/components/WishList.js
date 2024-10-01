@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';  // Import useState and useEffect from React
-import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';  
+import { loadStripe } from '@stripe/stripe-js';
 
 
 const WishList = () => {
@@ -46,6 +47,7 @@ const WishList = () => {
     };
 
     const handleBuy = (item) => {
+        //const stripe = await loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
         // Navigate to the payment page and pass the product data via state
         navigate('/checkout', { state: { item } });
     };
